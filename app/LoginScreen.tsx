@@ -1,4 +1,4 @@
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import React from "react";
 import {
   StyleSheet,
@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 const LoginScreen: React.FC = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -39,7 +40,10 @@ const LoginScreen: React.FC = () => {
           <Text>Facilities (Desktop Only)</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity
+          style={styles.loginBtn}
+          onPress={() => router.push("/DashboardScreen")}
+        >
           <Text style={styles.whiteText}>Login</Text>
         </TouchableOpacity>
 
